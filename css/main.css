@@ -1,0 +1,44 @@
+body {
+    margin: 0px;
+    background: url('../images/sunandclouds.png');
+}
+.memo {
+    position:absolute;
+    width:110px;
+    height:110px;
+    border: 6px solid rgba(0, 100, 50, 0.3);
+    background-clip: padding-box;
+    background-repeat: no-repeat;
+    background-color: #9abf32;
+    border-radius: 6px;
+}
+.memo:hover {
+    cursor: pointer;
+}
+#memos {
+    position:relative;
+    margin: 0 auto;
+    top: 40px;
+    width:762px;
+}
+.collected {
+    opacity: .1;
+    background-color: pink;
+}
+
+@keyframes up {
+    from {left:0px;}
+    to {left:-300px;}
+}
+@-webkit-keyframes up {
+    from {left:0px;}
+    to {left:-300px;}
+}
+@keyframes up {
+    from {top:-300px;}
+    to {top:300px;}
+}
+@-webkit-keyframes up {
+    from {top:-300px;}
+    to {top:300px;}
+}
