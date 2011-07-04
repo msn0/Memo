@@ -10218,28 +10218,6 @@ Backbone.sync = function(method, model, options) {
   }
 };$(function(){
             
-    var shuffle = function(o){ 
-        for(var j, x, i = o.length;i;j = parseInt(Math.random() * i,10), x = o[--i], o[i] = o[j], o[j] = x);
-        return o;
-    };
-     
-    var CARDSUPSIDE = "./images/card.png";
-    var CONTENTS = [];
-    var PAIRS = {
-        "cards/card-1-a.png": "cards/card-1-b.png",
-        "cards/card-2-a.png": "cards/card-2-b.png",
-        "cards/card-3-a.png": "cards/card-3-b.png",
-        "cards/card-4-a.png": "cards/card-4-b.png",
-        "cards/card-5-a.png": "cards/card-5-b.png",
-        "cards/card-6-a.png": "cards/card-6-b.png",
-        "cards/card-7-a.png": "cards/card-7-b.png",
-        "cards/card-8-a.png": "cards/card-8-b.png",
-        "cards/card-9-a.png": "cards/card-9-b.png",
-        "cards/card-a-a.png": "cards/card-a-b.png",
-        "cards/card-b-a.png": "cards/card-b-b.png",
-        "cards/card-c-a.png": "cards/card-c-b.png"
-    };
-    
     var Memo = Backbone.Model.extend({
         defaults: {
             collected: false,
@@ -10337,6 +10315,22 @@ Backbone.sync = function(method, model, options) {
     // APPVIEW
     var AppView = Backbone.View.extend({
         el: $("#app"),
+	CARDSUPSIDE: "./images/card.png",
+	CONTENTS: [],
+	PAIRS: {
+		"cards/card-1-a.png": "cards/card-1-b.png", // A
+		"cards/card-2-a.png": "cards/card-2-b.png", // B
+		"cards/card-3-a.png": "cards/card-3-b.png", // C
+		"cards/card-4-a.png": "cards/card-4-b.png", // A
+		"cards/card-5-a.png": "cards/card-5-b.png", // E
+		"cards/card-6-a.png": "cards/card-6-b.png", // F
+		"cards/card-7-a.png": "cards/card-7-b.png", // G
+		"cards/card-8-a.png": "cards/card-8-b.png", // H
+		"cards/card-9-a.png": "cards/card-9-b.png", // I
+		"cards/card-a-a.png": "cards/card-a-b.png", // J
+		"cards/card-b-a.png": "cards/card-b-b.png", // K
+		"cards/card-c-a.png": "cards/card-c-b.png"  // L
+	},
         initialize: function(){
             _.bindAll(this, 'render', 'createMemos', 'createContent', 'addMemo');
             memos.bind('add', this.addMemo);
@@ -10345,7 +10339,7 @@ Backbone.sync = function(method, model, options) {
             this.createMemos();
         },
         createMemos: function(){
-            var arr = shuffle(CONTENTS);
+            var arr = this.shuffle(this.CONTENTS);
             
             var k=0;
             for(var j=0; j<4; j++){
@@ -10357,7 +10351,7 @@ Backbone.sync = function(method, model, options) {
                         },
                         content: arr[k].content,
                         key: arr[k].key,
-                        cardupside: CARDSUPSIDE
+                        cardupside: this.CARDSUPSIDE
                     });
                     k++;
                 }
@@ -10371,12 +10365,16 @@ Backbone.sync = function(method, model, options) {
         },
         createContent: function(){
             var i = 0;
-            for(var c in PAIRS){
-                CONTENTS.push({key: i,content: c, isA: true});
-                CONTENTS.push({key: i,content: PAIRS[c], isA: false});
+            for(var c in this.PAIRS){
+                this.CONTENTS.push({key: i,content: c, isA: true});
+                this.CONTENTS.push({key: i,content: this.PAIRS[c], isA: false});
                 i++;
             }  
         },
+	shuffle: function(o){ 
+	        for(var j, x, i = o.length;i;j = parseInt(Math.random() * i,10), x = o[--i], o[i] = o[j], o[j] = x);
+	        return o;
+    	},
         render: function(){
         }
     });
