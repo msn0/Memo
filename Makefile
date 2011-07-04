@@ -1,7 +1,8 @@
 # Set the source directory
-srcdir = lib/
+distdir = dist/
+jsdir = lib/
 
-files = ${srcdir}backbone.js ${srcdir}backbone-localstorage.js ${srcdir}jquery-1.5.js ${srcdir}underscore-1.1.6.js ${srcdir}app.js
+files = ${jsdir}jquery-1.5.js ${jsdir}underscore-1.1.6.js ${jsdir}backbone.js ${jsdir}backbone-localstorage.js ${jsdir}app.js
 
 all: memo-dev.js memo.js
 
@@ -11,4 +12,6 @@ memo-dev.js: ${files}
 
 # Compress memo-dev.js into memo.js
 memo.js: memo-dev.js
-	java -jar compiler.jar --js $^ --js_output_file $@
+	java -jar lib/compiler.jar --js $^ --js_output_file $@
+	cp $@ $^ ${distdir}
+	rm $@ $^
