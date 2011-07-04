@@ -6,7 +6,7 @@ files = ${jsdir}jquery-1.5.js ${jsdir}underscore-1.1.6.js ${jsdir}backbone.js ${
 
 all: memo-dev.js memo.js
 
-# Combine all of the files into spark-dev.js
+# Combine all of the files into memo-dev.js
 memo-dev.js: ${files}
 	cat > $@ $^
 
