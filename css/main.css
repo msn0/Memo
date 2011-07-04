@@ -3,15 +3,17 @@ body {
     background: url('../images/sunandclouds.png') center top;
 }
 .memo {
-    position:absolute;
+    position:relative;
     width:110px;
     height:110px;
-    border: 6px solid rgba(0, 100, 50, 0.3);
-    background-clip: padding-box;
     background-repeat: no-repeat;
     background-color: #9abf32;
-    border-radius: 6px;
-    -moz-border-radius: 6px;
+}
+.memo-wrap {
+    position: absolute;
+    border: 5px solid rgba(0, 100, 50, 0.3);
+    border-radius: 5px;
+    -moz-border-radius: 5px;
 }
 .memo:hover {
     cursor: pointer;
@@ -19,8 +21,8 @@ body {
 #memos {
     position:relative;
     margin: 0 auto;
-    top: 40px;
-    width:762px;
+    top: 30px;
+    width:770px;
 }
 .collected {
     opacity: .1;

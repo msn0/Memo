@@ -14,9 +14,13 @@
 
         <!-- UNDERSCORE TEMPLATES -->
         <script type="text/template" id="memo-template">
-            <div class="memo <%= collected == true ? 'collected' : '' %>" 
-                 style="left:<%= coords.x %>px;top:<%= coords.y %>px; <%= clicked == true ? 'background-image: url('+content+');' : 'background-image: url('+cardupside+');' %>">
-            </div>
+        
+	<div class='memo-wrap' style="left:<%= coords.x %>px;top:<%= coords.y %>px;">    
+	     <div class="memo <%= collected == true ? 'collected' : '' %>" style="<%= clicked == true ? 'background-image: url('+content+');' : 'background-image: url('+cardupside+');' %>">
+             
+	
+	     </div>
+	</div>
         </script>
         
     </body>

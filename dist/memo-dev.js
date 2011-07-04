@@ -10271,7 +10271,7 @@ Backbone.sync = function(method, model, options) {
     });
                 
     var MemoView = Backbone.View.extend({
-        template: _.template($('#memo-template').html()),
+	template: _.template($('#memo-template').html()),
         events: {
             "click .memo": "memoClicked"
         },
@@ -10317,7 +10317,7 @@ Backbone.sync = function(method, model, options) {
             
     // COLLECTION OF MEMOS
     var Memos = Backbone.Collection.extend({
-        model: Memo,
+	model: Memo,
         localStorage: new Store("memos"),
         collected: function(){
             return this.filter(function(memo){
