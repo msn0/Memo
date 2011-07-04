@@ -2,7 +2,11 @@
 distdir = dist/
 jsdir = lib/
 
-files = ${jsdir}jquery-1.5.js ${jsdir}underscore-1.1.6.js ${jsdir}backbone.js ${jsdir}backbone-localstorage.js ${jsdir}app.js
+files = ${jsdir}jquery-1.5.js \
+	${jsdir}underscore-1.1.6.js \
+	${jsdir}backbone.js \
+	${jsdir}backbone-localstorage.js \
+	${jsdir}app.js
 
 all: memo-dev.js memo.js
 
