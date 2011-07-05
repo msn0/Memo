@@ -31,3 +31,6 @@ body {
     -moz-opacity:.1;
     background-color: pink;
 }
+.collected-wrap {
+    border: 5px solid rgba(0, 100, 50, 0.05);
+}
