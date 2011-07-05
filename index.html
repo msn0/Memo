@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>JS.MemoGame</title>
+        <title>MemoGame</title>
         <link href="./css/main.css" media="all" rel="stylesheet" type="text/css"/>
         <meta http-equiv="content-type" content="text/html; charset=UTF-8"></meta>
         <script type="text/javascript" src="./dist/memo.js"></script>
@@ -14,11 +14,10 @@
 
         <!-- UNDERSCORE TEMPLATES -->
         <script type="text/template" id="memo-template">
-        
-	<div class='memo-wrap <%= collected === true ? 'collected-wrap' : '' %>' style="left:<%= coords.x %>px;top:<%= coords.y %>px;">    
-	     <div class="memo <%= collected === true ? 'collected' : '' %>" style="<%= clicked === true ? 'background-image: url('+content+');' : 'background-image: url('+cardupside+');' %>">
-	     </div>
-	</div>
+            <div class='memo-wrap <%= collected === true ? 'collected-wrap' : '' %>' style="left:<%= coords.x %>px;top:<%= coords.y %>px;">    
+                 <div class="memo <%= collected === true ? 'collected' : '' %>" style="<%= clicked === true ? 'background-image: url('+content+');' : 'background-image: url('+cardupside+');' %>">
+                 </div>
+            </div>
         </script>
         
     </body>
