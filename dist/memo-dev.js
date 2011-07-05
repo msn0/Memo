@@ -10378,7 +10378,6 @@ Backbone.sync = function(method, model, options) {
             this.PAIRS = this.shuffle(this.PAIRS);
             for(var i=0; i<12; i++){
                 for(var key in this.PAIRS[i]){
-                    console.log(key);
                     this.CONTENTS.push({key: i,content: key, isA: true});
                     this.CONTENTS.push({key: i,content: this.PAIRS[i][key], isA: false});
                 }

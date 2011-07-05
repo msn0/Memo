@@ -3,7 +3,7 @@
     <head>
         <title>MemoGame</title>
         <link href="./css/main.css" media="all" rel="stylesheet" type="text/css"/>
-        <meta http-equiv="content-type" content="text/html; charset=UTF-8"></meta>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
         <script type="text/javascript" src="./dist/memo.js"></script>
     </head>
     <body>
@@ -12,13 +12,17 @@
             <div id="memos"></div>
         </div>
 
+        <footer style="position:absolute;bottom:0px;">
+                <img src="http://www.w3.org/html/logo/downloads/HTML5_Logo_64.png" alt="HTML5 Powered with CSS3 / Styling, Graphics, 3D &amp; Effects, Multimedia, Semantics, and Offline &amp; Storage" title="HTML5 Powered with CSS3 / Styling, Graphics, 3D &amp; Effects, Multimedia, Semantics, and Offline &amp; Storage" />
+        </footer>
+
         <!-- UNDERSCORE TEMPLATES -->
         <script type="text/template" id="memo-template">
             <div class='memo-wrap <%= collected === true ? 'collected-wrap' : '' %>' style="left:<%= coords.x %>px;top:<%= coords.y %>px;">    
                  <div class="memo <%= collected === true ? 'collected' : '' %>" style="<%= clicked === true ? 'background-image: url('+content+');' : 'background-image: url('+cardupside+');' %>">
-                 </div>
+                </div>
             </div>
         </script>
-        
+
     </body>
 </html>
