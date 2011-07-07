@@ -10351,7 +10351,6 @@ Backbone.sync = function(method, model, options) {
         },
         createMemos: function(){
             var arr = this.shuffle(this.CONTENTS);
-            console.log(this.CONTENTS); 
             var k=0;
             for(var j=0; j<4; j++){
                 for(var i=0; i<6; i++){
