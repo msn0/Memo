@@ -10346,8 +10346,16 @@ Backbone.sync = function(method, model, options) {
             _.bindAll(this, 'render', 'createMemos', 'createContent', 'addMemo');
             memos.bind('add', this.addMemo);
             memos.bind('all', this.render);
+            memos.bind('change:collected', this.changeCollected);
             this.createContent();
             this.createMemos();
+        },
+        changeCollected: function(){
+            console.log(memos.collected().length);
+            if(memos.collected().length === 24){
+                $("#congrats-box").show();
+                $("#overlay").show();
+            }
         },
         createMemos: function(){
             var arr = this.shuffle(this.CONTENTS);

@@ -34,3 +34,7 @@ body {
 .collected-wrap {
     border: 5px solid rgba(0, 100, 50, 0.05);
 }
+.footer {
+    position:absolute;
+    bottom:0px;
+}
