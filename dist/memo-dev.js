@@ -10351,9 +10351,8 @@ Backbone.sync = function(method, model, options) {
             this.createMemos();
         },
         changeCollected: function(){
-            console.log(memos.collected().length);
             if(memos.collected().length === 24){
-                $("#congrats-box").show();
+                $("#congrats-box").fadeIn();
                 $("#overlay").show();
             }
         },
