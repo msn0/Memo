@@ -8,12 +8,10 @@
 
         <style>
             #congrats-box {
-                position:absolute;
-                left:10px;
-                right:10px;
-                top:10px;
-                bottom:10px;
-                margin:100px 200px;
+                /*position:relative;
+                width:600px;
+                height:400px;
+                margin:100px auto;*/
                 z-index:100;
             }
             #congrats {
@@ -26,9 +24,14 @@
                 border-radius: 5px;
             }
             #congrats-content {
-                background-color:white;
+                background-color: white;
+                border-radius: 5px 5px 5px 5px;
+                color: #333333;
+                font-family: fantasy;
+                font-size: 74px;
                 height: 100%;
-                border-radius: 5px;
+                overflow: hidden;
+                text-align:center;
             }
             #overlay {
                 position:absolute;
@@ -38,6 +41,7 @@
                 bottom:0px;
                 background-color: rgba(0,0,0,0.2);
                 z-index:10;
+                display:none;
             }
 
         </style>
@@ -52,13 +56,23 @@
             <img src="http://www.w3.org/html/logo/downloads/HTML5_Logo_64.png" alt="HTML5 Powered with CSS3 / Styling, Graphics, 3D &amp; Effects, Multimedia, Semantics, and Offline &amp; Storage" title="HTML5 Powered with CSS3 / Styling, Graphics, 3D &amp; Effects, Multimedia, Semantics, and Offline &amp; Storage" />
         </footer>
 
-        <div id="congrats-box" style="display: none;">
-            <div id="congrats">
-                <div id="congrats-content">test</div>
-            </div>
+        <div onclick="window.location.href='./index.html'" id="congrats-box" style="display:none;cursor:pointer;position:relative;background-image:url('./images/replay2.png');width:757px;height:207px;margin:15% auto;background-color:transparent;text-align:center;">
+             <span style="margin-left:160px;width:757px;font-family:fantasy;font-size:74px;color:white;position: relative; text-shadow: 2px 2px 2px rgb(102, 102, 102);line-height:200px;">Zagraj jeszcze raz</span>
         </div>
         
-        <div id="overlay" style="display: none;"></div>
+        <!--<div id="congrats-box" style="display: none;">
+            <div id="congrats">
+                <div id="congrats-content">
+                    <div style="display:none;position: relative; background: none repeat scroll 0% 0% tomato; color: white; top: -20px; padding: 70px 0px 40px; width: 120%; left: -10%; height: 100px; -moz-transform: rotate(-2deg); box-shadow: 0pt 0pt 14px 2px rgba(0, 0, 0, 0.698) inset;">
+                        <span style="position: relative; text-shadow: 2px 2px 2px rgb(102, 102, 102);">To jest test!</span>
+                    </div>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>-->
+
+        <div id="overlay"></div>
 
         <!-- UNDERSCORE TEMPLATES -->
         <script type="text/template" id="memo-template">
